@@ -64,7 +64,9 @@ const findInvalidCards = (arrayOfCards) => {
             invalidArray.push(arrayOfCards[i])
         }   
     }
+    console.log(`invalidArrayLength: ${invalidArray.length}`)
     return invalidArray
+    
 }
 
 const idInvalidCardCompanies = (arrayOfArrays) => {
@@ -87,13 +89,15 @@ const idInvalidCardCompanies = (arrayOfArrays) => {
         }
     }
     return companyNames
-
 }
 
 
 //console.log(`Validate Cred: ${validateCred(invalid1)}`)
-findInvalidCards(batch).forEach((a) => {
+/*findInvalidCards(batch).forEach((a) => {
     console.log(`Array of Invalid Cards: [${a}]`)
-})
+})*/
 
-console.log(idInvalidCardCompanies(batch))
+const invalidCards = findInvalidCards(batch)
+console.log(invalidCards)
+
+console.log(idInvalidCardCompanies(invalidCards))
